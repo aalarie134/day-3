@@ -14,8 +14,9 @@ public class day3 {
         }
         while (scan.hasNext()) {
             char[] line = scan.next().toCharArray();
-            for (int i = 0; i < line.length; i++) {
-                    count[i].add(line[i]);
+            System.out.println(Arrays.toString(line));
+            for (int k = 0; k < 12; k++) {
+                    count[k].add(line[k]);
             }
         }
         int[] answer = new int[12];
@@ -28,7 +29,8 @@ public class day3 {
             }
         }
 
-        double end = converter.convert(answer);
+        System.out.println(Arrays.toString(answer));
+        double end = converter.convert(answer) * converter.convert(converter.flip(answer));
         System.out.println(end);
 
     }
